@@ -90,6 +90,13 @@ is_mutant (BOOLEAN): True if the DNA is identified as mutant, False otherwise.
 date (TIMESTAMP): Date when the record was created (default: current date).
 ```
 
+## Test
+Run the tests with this command:
+```
+pytest tests/
+```
+
+
 ## Bonus
 ### If you want to run it with docker
 ``` bash
