@@ -1,5 +1,3 @@
-from repositories.dna_repository import save_dna
-
 def detect_mutant(dna_sequence):
     """
     Detects if a DNA sequence belongs to a mutant.
@@ -13,7 +11,6 @@ def detect_mutant(dna_sequence):
         bool: True if the DNA sequence is identified as mutant, False otherwise.
     """
     n = len(dna_sequence)
-    print(n)
     if n < 4:
         return False  # Cannot detect mutants in matrices smaller than 4x4
 
@@ -32,7 +29,6 @@ def detect_mutant(dna_sequence):
     # Search for sequences in all possible positions and directions
     for i in range(n):
         for j in range(n):
-            print('checking position', i, j, dna_sequence[i][j])
             if dna_sequence[i][j] in {'A', 'T', 'C', 'G'}:
                 # Check horizontally (right)
                 if j <= n - 4 and has_sequence(0, 1, i, j):
@@ -51,7 +47,6 @@ def detect_mutant(dna_sequence):
                 return True
 
     return False
-
 
 def check_if_mutant(dna_sequence):
     """

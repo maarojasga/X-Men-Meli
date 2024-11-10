@@ -1,6 +1,5 @@
 from datetime import datetime
 from db.database import get_db_connection
-import psycopg2
 
 def save_dna(record_id, dna_sequence, is_mutant):
     """
@@ -27,12 +26,10 @@ def save_dna(record_id, dna_sequence, is_mutant):
     # Check if the DNA sequence already exists in the database
     cursor.execute("SELECT is_mutant, id FROM dna_records WHERE dna_sequence = %s", (dna_sequence_str,))
     result = cursor.fetchone()
-    print(result)
     
     if result:
         # If it already exists, return the "exists" status and whether it is mutant or human
         existing_is_mutant = result[0]
-        print(existing_is_mutant)
         conn.close()
         return {"exists": True, "is_mutant": existing_is_mutant, "record_id": result[1]}
 
