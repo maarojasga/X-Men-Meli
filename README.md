@@ -96,3 +96,15 @@ date (TIMESTAMP): Date when the record was created (default: current date).
 docker build -t x-men-meli .
 docker run -p 8000:80 x-men-meli
 ```
+
+#### Note
+In utils/compare_mutant_detector.py, two algorithms are evaluated for performance and accuracy. The superior algorithm is then selected and integrated into mutant_service.py.
+
+## Production links
+### [Documentation] (https://x-men-meli.azurewebsites.net/docs)
+
+### POST https://x-men-meli.azurewebsites.net/api/mutant
+
+### GET https://x-men-meli.azurewebsites.net/api/stats
+
+
