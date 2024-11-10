@@ -88,4 +88,11 @@ id (TEXT): Primary key, unique identifier for each record.
 dna_sequence (TEXT): DNA sequence as a single string.
 is_mutant (BOOLEAN): True if the DNA is identified as mutant, False otherwise.
 date (TIMESTAMP): Date when the record was created (default: current date).
-``` 
+```
+
+## Bonus
+### If you want to run it with docker
+``` bash
+docker build -t x-men-meli .
+docker run -p 8000:80 x-men-meli
+```
